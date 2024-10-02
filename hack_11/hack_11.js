@@ -17,8 +17,47 @@
  */
 let numberArray = [1,2,3,4,5];
 let stringArray = ["foo","bar","baz","qux","echo"]
-let result = [];
+let result = numberArray.concat(stringArray);
 
+for (let i = 0; i < result.length; i++) {
+    if (typeof result[i] === 'number') {
+        switch (result[i]) {
+            case 1:
+                result[i] = "one";
+                break;
+            case 3:
+                result[i] = "three";
+                break;
+            case 5:
+                result[i] = "five";
+                break;
+        }
+    } else if (typeof result[i] === 'string') {
+        switch (result[i]) {
+            case 'foo':
+                result[i] = 'f00';
+                break;
+            case 'bar':
+                result[i] = 'Bar';
+                break;
+            case 'baz':
+                result[i] = 'b@z';
+                break;
+            case 'qux':
+                result[i] = 'quX';
+                break;
+            case 'echo':
+                result[i] = '3ch0';
+                break;
+        }
+    }
+}
+
+result.unshift("h@ck");
+result.push("h@ck");
+result.splice(6, 0, "h@ck");
+
+console.log(result);
 
 //export result
 module.exports = result;

@@ -7,6 +7,8 @@
  */
 let result = [];
 
+const numeros = Array(7).fill(0).map((_, index) => 7 - index).filter(num => num % 2 !== 0);
+result = numeros
 
 //export result
 module.exports = result;
